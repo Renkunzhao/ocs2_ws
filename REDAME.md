@@ -1,0 +1,1 @@
+This repo includes scripts to ease the configuratio of [OCS2](https://github.com/Renkunzhao/ocs2) and [legged_contrl](https://github.com/Renkunzhao/legged_control)
