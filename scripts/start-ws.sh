@@ -12,10 +12,10 @@ docker run -it \
   -v "/etc/localtime:/etc/localtime:ro" \
   -v "/dev/input:/dev/input" \
   -v "/run/udev:/run/udev" \
-  -v "$SCRIPT_DIR/../:/root/code/legged_control_ws" \
+  -v "$SCRIPT_DIR/../:/root/code/ocs2_ws" \
   -v "$HOME/.raisim/:/root/.raisim/" \
   --privileged \
   --security-opt seccomp=unconfined \
   --network host \
-  --name legged-control-ws \
-wukong4:latest
+  --name ocs2-ws \
+ocs2-ws

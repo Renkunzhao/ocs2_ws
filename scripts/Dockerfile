@@ -5,9 +5,10 @@ FROM osrf/ros:noetic-desktop-full
 ENV DEBIAN_FRONTEND=noninteractive
 
     # 换源
-RUN sed -i "s@http://.*archive.ubuntu.com@http://mirrors.huaweicloud.com@g" /etc/apt/sources.list && \
-    sed -i "s@http://.*security.ubuntu.com@http://mirrors.huaweicloud.com@g" /etc/apt/sources.list && \
-    apt update && \
+# RUN sed -i "s@http://.*archive.ubuntu.com@http://mirrors.huaweicloud.com@g" /etc/apt/sources.list && \
+#     sed -i "s@http://.*security.ubuntu.com@http://mirrors.huaweicloud.com@g" /etc/apt/sources.list
+
+RUN apt update && \
     # 管理软件源、GPG秘钥、APT开启https下载、CA证书
     apt install -y lsb-release software-properties-common gnupg2 apt-transport-https ca-certificates python3-pip && \
     # 常用网络包
@@ -22,9 +23,11 @@ RUN apt install -y gnome-terminal dbus-x11 && \
     apt install -y ros-noetic-costmap-2d && \
     # 安装 OCS2 依赖
     apt install -y libglpk-dev libgmp-dev libmpfr-dev ros-noetic-pybind11-catkin python3-catkin-tools && \
-    apt install -y ros-noetic-rqt-multiplot ros-noetic-octomap-msgs && \
+    apt install -y ros-noetic-rqt-multiplot ros-noetic-octomap-msgs ros-noetic-pinocchio && \
     # 安装 mpc-net 依赖
-    apt install -y rsync python3-venv
+    apt install -y rsync python3-venv && \
+    # 安装 legged_control 依赖
+    apt install -y ros-noetic-rqt-controller-manager
 
     # 配置 ssh 服务
 RUN apt install -y openssh-server && \

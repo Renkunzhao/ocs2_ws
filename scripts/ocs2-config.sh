@@ -9,8 +9,8 @@ cd $PROJECT_DIR/src
 git clone --recurse-submodules --depth=1 https://github.com/Renkunzhao/ocs2.git
 
 # Clone pinocchio
-git clone --recurse-submodules --depth=1 https://github.com/leggedrobotics/pinocchio.git
-# git clone --recurse-submodules --depth=1 https://github.com/stack-of-tasks/pinocchio.git
+# git clone --recurse-submodules --depth=1 https://github.com/leggedrobotics/pinocchio.git
+# git clone --recurse-submodules --depth=1 -b v3.7.0 https://github.com/stack-of-tasks/pinocchio.git 
 
 # Clone hpp-fcl
 git clone --recurse-submodules --depth=1 https://github.com/leggedrobotics/hpp-fcl.git
