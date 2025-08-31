@@ -47,7 +47,7 @@ make -j$(nproc) && sudo make install
 cd $WORKSPACE/third_party
 echo "Executing actions for qpOASES..."
 echo "Downloading qpOASES..."
-git clone --recurse-submodules --depth=1 https://github.com/coin-or/qpOASES.git
+git clone --recurse-submodules --depth=1 https://github.com/coin-or/qpOASES.git -b releases/3.2.2
 cd qpOASES
 mkdir build
 cd build
